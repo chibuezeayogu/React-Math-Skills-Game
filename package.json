@@ -1,0 +1,19 @@
+{
+  "name": "react-math-skills-game",
+  "version": "1.0.0",
+  "description": "react math skill game - Play Nine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chibuezeayogu/React-Math-Skills-Game.git"
+  },
+  "author": "Chibueze Ayogu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chibuezeayogu/React-Math-Skills-Game/issues"
+  },
+  "homepage": "https://github.com/chibuezeayogu/React-Math-Skills-Game#readme"
+}
