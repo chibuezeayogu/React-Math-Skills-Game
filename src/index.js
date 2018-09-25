@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const App = () => (
+export const App = () => (
  <div>
    <h1>
      Play Nine
