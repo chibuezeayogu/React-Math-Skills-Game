@@ -1,20 +1,45 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const Answers = ({ selectedNumbers, unselectNumber }) => (
-  <div className="col-5">
-    {selectedNumbers.map((number, i) => <span 
-        key={i}
-        role="button"
-        tabIndex={0}
-        onClick={unselectNumber.bind(null, number)}
-      >
-        {number}
-      </span>
-    )
-    }
-  </div>
-);
+/**
+ * 
+ * @class Answers
+ * @extends Component
+ */
+class Answers extends Component {
+  /**
+   * @method handleUnselectNumber
+   * 
+   * @memberof Answers
+   * 
+   * @param {object} event
+   * 
+   * @returns {void}
+   */
+  handleUnselectNumber = (event) => {
+    this.props.unselectNumber(event);
+  }
+
+  render() {
+    const { selectedNumbers } = this.props;
+    return (
+      <div className="col-5">
+        {selectedNumbers.map((number, i) => <span
+            key={i}
+            id={number}
+            role="button"
+            tabIndex={0}
+            onClick={this.handleUnselectNumber}
+          >
+            {number}
+          </span>
+        )
+        }
+      </div>
+    );
+  }
+}
+
 
 Answers.propTypes = {
   selectedNumbers: PropTypes.array,

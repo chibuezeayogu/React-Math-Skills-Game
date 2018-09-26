@@ -3,7 +3,8 @@ global jest
 expect 
 */
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
+
 import Answers from '../../components/Answers';
 
 describe('Answers Component', () => {
@@ -13,12 +14,18 @@ describe('Answers Component', () => {
       unselectNumber: jest.fn(),
     };
 
-    return mount(<Answers {...props}/>);
+    return shallow(<Answers {...props}/>);
   };
   const wrapper = setup();
 
   it('should render correctly', () => {
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should call handleUnselectNumber method', () => {
+    const handleSpy = jest.spyOn(wrapper.instance(), 'handleUnselectNumber');
+    wrapper.instance().handleUnselectNumber();
+    expect(handleSpy).toHaveBeenCalled();
   });
 
   it('should unselete a number', () => {

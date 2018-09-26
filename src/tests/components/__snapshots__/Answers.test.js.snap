@@ -1,25 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Answers Component should render correctly 1`] = `
-<Answers
-  selectedNumbers={
-    Array [
-      1,
-    ]
-  }
-  unselectNumber={[MockFunction]}
+<div
+  className="col-5"
 >
-  <div
-    className="col-5"
+  <span
+    id={1}
+    key="0"
+    onClick={[Function]}
+    role="button"
+    tabIndex={0}
   >
-    <span
-      key="0"
-      onClick={[Function]}
-      role="button"
-      tabIndex={0}
-    >
-      1
-    </span>
-  </div>
-</Answers>
+    1
+  </span>
+</div>
 `;
