@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Component render correctly 1`] = `
+<div
+  className="col-2"
+>
+  <button
+    className="btn btn-outline-secondary"
+    disabled={false}
+    onClick={[Function]}
+  >
+    =
+  </button>
+  <br />
+  <br />
+  <button
+    className="btn btn-outline-warning"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <i
+      className="fa fa-refresh"
+    />
+     
+    5
+  </button>
+</div>
+`;
