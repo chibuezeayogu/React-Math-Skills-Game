@@ -8,8 +8,6 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/node:7.10
-    environment:
-      CC_TEST_REPORT_ID: b5ad120eebfa8865ba5603348674418598b1ea673358bd6d315d2df6a2016042
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
@@ -64,3 +62,6 @@ workflows:
   build_test_deploy:
     jobs:
       - build:
+        filters:
+          branches:
+            only: develop

@@ -1,12 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './components/App';
 
-const App = () => (
- <div>
-   <h1>
-     Play Nine
-   </h1>
- </div>
+export default ReactDOM.render(
+  <App />, document.getElementById('app') || document.createElement('div')
 );
-
-ReactDOM.render(<App/>, document.getElementById('app'));
