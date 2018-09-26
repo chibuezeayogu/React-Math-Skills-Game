@@ -43,6 +43,7 @@ module.exports = {
       chunkFilename: "[id].css"
     })
   ],
+  devtool: "source-map",
   stats: {
     children: false,
     assets: true,
