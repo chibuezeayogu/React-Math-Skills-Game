@@ -5,19 +5,29 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/react-math-skills-game
     docker:
       # specify the version you desire here
       - image: circleci/node:7.10
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
+    steps:
+      - run:
+          name:  Download cc-test-reporter
+          command: |
+            mkdir -p tmp/
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./tmp/cc-test-reporter
+            chmod +x ./tmp/cc-test-reporter
+      - persist_to_workspace:
+          root: tmp
+          paths:
+            - cc-test-reporter
 
+  Download_catch_dependencies_and_run_test:
     working_directory: ~/react-math-skills-game
-
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:7.10
     steps:
       - checkout
-
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -33,33 +43,15 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-        
-      # run tests!
+      # run tests and upload coverage report!
       - run: 
-          name: run test
+          name: run tests and upload coverage report!
           command: npm test
-
-      # run coverage report
-      - run:
-          name: code-coverage
-          command: 'npm test'
-
-      # special step to save test results as as artifact
-      - store_artifacts: 
-          path: test-results.xml
-          prefix: tests
-  
-      - store_artifacts:
-          path: coverage
-          prefix: coverage
-
-      # special step to upload test results for display in Test Summary
-      - store_test_results:
-          path: test-results.xml
 
 workflows:
   version: 2
   build_test_deploy:
     jobs:
       - build
+      - Download_catch_dependencies_and_run_test
           

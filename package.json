@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --mode development --hot --no-ignore",
     "lint": "esw webpack.config.* src --color",
     "lint:watch": "npm run lint -- --watch",
-    "test": "jest --config jest.config.json -u --coverage && cat ./coverage/lcov.info"
+    "test": "jest --config jest.config.json -u --coverage && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
