@@ -17,13 +17,13 @@ class Answers extends Component {
    * @returns {void}
    */
   handleUnselectNumber = (event) => {
-    this.props.unselectNumber(event);
+    this.props.unselectNumber(event.target.id);
   }
 
   render() {
     const { selectedNumbers } = this.props;
     return (
-      <div className="col-5">
+      <div>
         {selectedNumbers.map((number, i) => <span
             key={i}
             id={number}

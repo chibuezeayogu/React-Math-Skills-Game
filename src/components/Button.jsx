@@ -10,13 +10,13 @@ import PropTypes from 'prop-types';
 class Button extends Component {
   /**
    * 
-   * @method handelAnswerIsCorrect
+   * @method handelAcceptAnswer
    * 
    * @memberof Button
    * 
    * @returns {void}
    */
-  handelAcceptAnswer = () => {
+  handleAcceptAnswer = () => {
     this.props.acceptAnswer();
   }
 
@@ -28,20 +28,8 @@ class Button extends Component {
    * 
    * @returns {void}
    */
-  handelCheckAnswer = () => {
+  handleCheckAnswer = () => {
     this.props.checkAnswer();
-  }
-
-  /**
-   * 
-   * @method handelAcceptAnswer
-   * 
-   * @memberof Button
-   * 
-   * @returns {void}
-   */
-  handelAcceptAnswer = () => {
-    this.props.acceptAnswer();
   }
 
   /**
@@ -52,7 +40,7 @@ class Button extends Component {
    * 
    * @returns {void}
    */
-  handelRedraw = () => {
+  handleRedraw = () => {
     this.props.redraw();
   }
 
@@ -63,7 +51,7 @@ class Button extends Component {
       case true:
         button = <button 
                   className="btn btn-outline-success" 
-                  onClick={this.handelAcceptAnswer}>
+                  onClick={this.handleAcceptAnswer}>
                   <i className="fa fa-check"></i>
                 </button>;
         break;
@@ -74,23 +62,23 @@ class Button extends Component {
         break;
       default:
         button = <button className="btn btn-outline-secondary"
-                  onClick={this.handelCheckAnswer}
+                  onClick={this.handleCheckAnswer}
                   disabled={selectedNumbers.length === 0}>
                   =
                 </button>;
     }
   
     return (
-      <div className="col-2">
+      <div>
         {button}
         <br /><br />
         <button 
           className="btn btn-outline-warning"
           type="button"
-          onClick={this.handelRedraw}
+          onClick={this.handleRedraw}
           disabled={redraws === 0}
         >
-          <i className="fa fa-refresh"></i> {redraws}
+          <i className="fas fa-redo-alt" aria-hidden="true"></i> {redraws}
         </button>
       </div>
     );
@@ -103,7 +91,10 @@ Button.propTypes = {
   redraw: PropTypes.func,
   redraws: PropTypes.number,
   selectedNumbers: PropTypes.array,
-  answerIsCorrect: PropTypes.bool
+  answerIsCorrect: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.bool
+  ]),
 };
 
 export default Button;

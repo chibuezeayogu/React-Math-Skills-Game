@@ -5,12 +5,14 @@
   "collectCoverage": true,
   "collectCoverageFrom": [
     "src/**/*.{js,jsx}",
-    "!**/node_modules/**"
+    "!**/node_modules/**",
+    "!src/utils/!(mealsHelper).js"
   ],
   "moduleNameMapper": {
     "^image![a-zA-Z0-9$_-]+$": "GlobalImageStub",
     "^[./a-zA-Z0-9$_-]+\\.png$": "<rootDir>/RelativeImageStub.js",
-    "module_name_(.*)": "<rootDir>/substituted_module_$1.js"
+    "module_name_(.*)": "<rootDir>/substituted_module_$1.js",
+    "\\.(css|scss)$": "<rootDir>/src/tests/__mocks__/fileMock.js"
   },
   "snapshotSerializers": [
     "enzyme-to-json/serializer"

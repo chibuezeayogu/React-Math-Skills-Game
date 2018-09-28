@@ -23,8 +23,21 @@ describe('Numbers Component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should call numberClassName method', () => {
+    const spy = jest.spyOn(wrapper.instance(), 'numberClassName');
+    wrapper.instance().numberClassName(1);
+    expect(spy).toHaveBeenCalled();
+  });
 
-  it('should selete a selectNumber', () => {
-    wrapper.find('#selectNumber').first().simulate('click');
+  it('should call handleSelectNumber  method', () => {
+    const spy = jest.spyOn(wrapper.instance(), 'handleSelectNumber');
+    const event = {
+      target: {
+        id: 1
+      }
+    };
+
+    wrapper.instance().handleSelectNumber(event);
+    expect(spy).toHaveBeenCalled();
   });
 });

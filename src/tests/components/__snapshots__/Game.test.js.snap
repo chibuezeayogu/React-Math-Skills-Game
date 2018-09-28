@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Game Component should render correctly 1`] = `
+<Fragment>
+  <div
+    className="jumbotron text-center"
+  >
+    <h1>
+      Math Skills Kids' Game
+    </h1>
+    <h2>
+      Play Nine
+    </h2>
+  </div>
+  <div
+    className="container container-set"
+  >
+    <div>
+      <div
+        className="row"
+      >
+        <div
+          className="card text-center justify-content-center col-sm-5"
+        >
+          <Stars
+            numberOfStars={6}
+          />
+        </div>
+        <div
+          className="text-center col-sm-2 col-md-2 col-lg-2 "
+        >
+          <Button
+            acceptAnswer={[Function]}
+            answerIsCorrect={null}
+            checkAnswer={[Function]}
+            redraw={[Function]}
+            redraws={5}
+            selectedNumbers={Array []}
+          />
+        </div>
+        <div
+          className="card text-center justify-content-center col-sm-5"
+        >
+          <Answers
+            selectedNumbers={Array []}
+            unselectNumber={[Function]}
+          />
+        </div>
+      </div>
+      <br />
+      <hr />
+      <div
+        className="card text-center justify-content-center col-sm-12"
+        style={
+          Object {
+            "height": "100px",
+          }
+        }
+      >
+        <Numbers
+          selectNumber={[Function]}
+          selectedNumbers={Array []}
+          usedNumbers={Array []}
+        />
+      </div>
+    </div>
+    <br />
+    <hr />
+  </div>
+</Fragment>
+`;

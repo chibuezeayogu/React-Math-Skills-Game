@@ -27,32 +27,31 @@ describe('Button Component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should call handelCheckAnswer when answerIsCorrect is ture', () => {
+  it('should call handleCheckAnswer when answerIsCorrect is ture', () => {
     const wrapper = setup(true);
-    const handleSpy = jest.spyOn(wrapper.instance(), 'handelCheckAnswer');
-    wrapper.instance().handelCheckAnswer();
+    const handleSpy = jest.spyOn(wrapper.instance(), 'handleCheckAnswer');
+    wrapper.instance().handleCheckAnswer();
     expect(handleSpy).toHaveBeenCalled();
   });
 
-  it('should call handelCheckAnswer when answerIsCorrect is false', () => {
+  it('should call handleCheckAnswer when answerIsCorrect is false', () => {
     const wrapper = setup(false);
-    const handleSpy = jest.spyOn(wrapper.instance(), 'handelCheckAnswer');
-    wrapper.instance().handelCheckAnswer();
+    const handleSpy = jest.spyOn(wrapper.instance(), 'handleCheckAnswer');
+    wrapper.instance().handleCheckAnswer();
     expect(handleSpy).toHaveBeenCalled();
   });
 
   it('should call handelAcceptAnswer method', () => {
     const wrapper = setup(true);
-    const handleSpy = jest.spyOn(wrapper.instance(), 'handelAcceptAnswer');
-    wrapper.instance().handelAcceptAnswer();
+    const handleSpy = jest.spyOn(wrapper.instance(), 'handleAcceptAnswer');
+    wrapper.instance().handleAcceptAnswer();
     expect(handleSpy).toHaveBeenCalled();
   });
 
   it('should call handelRedraw method', () => {
-    const wrapper = setup(null);
-    const handleSpy = jest.spyOn(wrapper.instance(), 'handelRedraw');
-    wrapper.instance().handelRedraw();
+    const wrapper = setup(true);
+    const handleSpy = jest.spyOn(wrapper.instance(), 'handleRedraw');
+    wrapper.instance().handleRedraw();
     expect(handleSpy).toHaveBeenCalled();
   });
-
 });

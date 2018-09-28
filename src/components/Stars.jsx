@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 
 const Stars = ({ numberOfStars }) => (
-  <div className="col-5">
+  <div>
     {_.range(numberOfStars).map(i => <i key={i} className="fa fa-star" />)}
   </div>
 );

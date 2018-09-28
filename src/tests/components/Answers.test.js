@@ -23,12 +23,14 @@ describe('Answers Component', () => {
   });
 
   it('should call handleUnselectNumber method', () => {
-    const handleSpy = jest.spyOn(wrapper.instance(), 'handleUnselectNumber');
-    wrapper.instance().handleUnselectNumber();
-    expect(handleSpy).toHaveBeenCalled();
-  });
+    const spy = jest.spyOn(wrapper.instance(), 'handleUnselectNumber');
+    const event = {
+      target: {
+        id: 1
+      }
+    };
 
-  it('should unselete a number', () => {
-    wrapper.find('span').first().simulate('click');
+    wrapper.instance().handleUnselectNumber(event);
+    expect(spy).toHaveBeenCalled();
   });
 });

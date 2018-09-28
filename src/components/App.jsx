@@ -1,10 +1,10 @@
 import React from 'react';
 
+import Game from './Game';
+
 const App = () => (
  <div>
-   <h1>
-     Play Nine
-   </h1>
+   <Game />
  </div>
 );
 
