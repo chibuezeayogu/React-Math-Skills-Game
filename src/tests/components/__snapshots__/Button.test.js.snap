@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button Component render correctly 1`] = `
-<div
-  className="col-2"
->
+<div>
   <button
     className="btn btn-outline-secondary"
     disabled={false}
@@ -20,7 +18,8 @@ exports[`Button Component render correctly 1`] = `
     type="button"
   >
     <i
-      className="fa fa-refresh"
+      aria-hidden="true"
+      className="fas fa-redo-alt"
     />
      
     5

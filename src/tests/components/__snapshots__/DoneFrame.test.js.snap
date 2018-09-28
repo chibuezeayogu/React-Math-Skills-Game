@@ -5,10 +5,10 @@ exports[`DoneFrame Component should render correctly 1`] = `
   className="text-center"
 >
   <h2>
-    <Component />
+    Nice Well Done
   </h2>
   <button
-    className="btn btn-outline-secondary"
+    className="btn btn-outline-success"
     onClick={[MockFunction]}
   >
     Play Again

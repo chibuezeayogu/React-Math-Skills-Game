@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Answers Component should render correctly 1`] = `
-<div
-  className="col-5"
->
+<div>
   <span
     id={1}
     key="0"

@@ -1,34 +1,64 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
-const Numbers = ({ selectedNumbers, selectNumber, usedNumbers }) => {
-  const numberClassName = (number) => {
-    if (usedNumbers.indexOf(number) >= 0) return 'used';
+
+/**
+ * 
+ * @class Numbers
+ * @extends Component
+ */
+class Numbers extends Component {
+  /**
+   * 
+   * @method selectNumber
+   * 
+   * @memberof Game
+   * 
+   * @param {integer} number
+   * 
+   * @returns {void}
+   */
+  numberClassName = (number) => {
+    if (this.props.usedNumbers.indexOf(number) >= 0) return 'used';
     
-    if (selectedNumbers.indexOf(number) >= 0) return 'selected';
+    if (this.props.selectedNumbers.indexOf(number) >= 0) return 'selected';
   };
-  
-  return (
-    <div className="card text-center">
+
+  /**
+   * 
+   * @method handleSelectNumber
+   * 
+   * @memberof Game
+   * 
+   * @param {object} event
+   * 
+   * @returns {void}
+   */
+  handleSelectNumber = (event) => {
+    this.props.selectNumber(event.target.id);
+  }
+
+  render() {
+    return (
       <div>
-        {
-          Numbers.list.map((number, i) => <span 
-            key={i} 
-            className={numberClassName(number)}
-            id="selectNumber"
-            role="button"
-            tabIndex={0} 
-            onClick={selectNumber.bind(null, number)}
-          >
-            {number}
-          </span>
-          )
-        }
+          {
+            Numbers.list.map((number, i) => <span 
+              key={i} 
+              className={this.numberClassName(number)}
+              id={number}
+              role="button"
+              tabIndex={0} 
+              onClick={this.handleSelectNumber}
+            >
+              {number}
+            </span>
+            )
+          }
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 Numbers.list = _.range(1, 10);
 
