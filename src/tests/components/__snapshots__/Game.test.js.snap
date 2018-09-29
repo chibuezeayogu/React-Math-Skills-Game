@@ -3,6 +3,26 @@
 exports[`Game Component should render correctly 1`] = `
 <Fragment>
   <div
+    className="container"
+  >
+    <ul
+      className="nav justify-content-end"
+    >
+      <li
+        className="nav-item"
+      >
+        <a
+          className="nav-link active"
+          data-target="#modal"
+          data-toggle="modal"
+        >
+          How To Play
+        </a>
+      </li>
+    </ul>
+  </div>
+  <Modal />
+  <div
     className="jumbotron text-center"
   >
     <h1>
@@ -23,7 +43,7 @@ exports[`Game Component should render correctly 1`] = `
           className="card text-center justify-content-center col-sm-5"
         >
           <Stars
-            numberOfStars={6}
+            numberOfStars={3}
           />
         </div>
         <div
