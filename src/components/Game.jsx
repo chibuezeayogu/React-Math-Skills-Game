@@ -7,6 +7,7 @@ import DoneFrame from './DoneFrame';
 import Button from './Button';
 import Answers from './Answers';
 import Stars from './Stars';
+import Modal from './Modal';
 import possibleCombinationSum from '../utils/possibleCombinationSum';
 
 
@@ -183,6 +184,20 @@ class Game extends Component {
     const { progress } = this;
     return (
     <Fragment>
+      <div className="container">
+        <ul className="nav justify-content-end">
+          <li className="nav-item">
+            <a 
+              className="nav-link active" 
+              data-toggle="modal" 
+              data-target="#modal"
+            >
+              How To Play
+            </a>
+          </li>
+        </ul>
+        </div>
+        <Modal />
       <div className="jumbotron text-center">
         <h1>Math Skills Kids' Game</h1>
         <h2>Play Nine</h2>

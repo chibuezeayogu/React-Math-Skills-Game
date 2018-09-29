@@ -3,7 +3,7 @@ global jest
 expect 
 */
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Numbers from '../../components/Numbers';
 
 describe('Numbers Component', () => {
@@ -14,7 +14,7 @@ describe('Numbers Component', () => {
       usedNumbers: [9]
     };
 
-    return mount(<Numbers {...props}/>);
+    return shallow(<Numbers {...props}/>);
   };
 
   const wrapper = setup();

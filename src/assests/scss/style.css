@@ -42,3 +42,11 @@ span {
 h3 {
  text-align: center;
 }
+
+.nav {
+  background: transparent;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    justify-content: center;
+}
